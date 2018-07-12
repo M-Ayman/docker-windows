@@ -1,0 +1,43 @@
+version: '3.3'
+
+services:
+
+  webinar-db:
+    build:
+      context: ./
+      dockerfile: ./docker/db/Dockerfile
+
+  elasticsearch:
+    build:
+      context: ./
+      dockerfile: ./docker/elasticsearch/Dockerfile
+
+  kibana:
+    build:
+      context: ./
+      dockerfile: ./docker/kibana/Dockerfile
+
+  save-handler:
+    build:
+      context: ./
+      dockerfile: ./docker/save-handler/Dockerfile
+
+  index-handler:
+    build:
+      context: ./
+      dockerfile: ./docker/index-handler/Dockerfile
+
+  web-app:
+    build:
+      context: ./
+      dockerfile: ./docker/web/Dockerfile
+
+  nginx:
+    build:
+      context: ./
+      dockerfile: ./docker/nginx/Dockerfile
+
+  prometheus:
+    build:
+      context: ./
+      dockerfile: ./docker/prometheus/Dockerfile

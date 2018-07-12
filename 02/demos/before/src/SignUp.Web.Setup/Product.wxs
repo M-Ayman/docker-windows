@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"
+      xmlns:iis="http://schemas.microsoft.com/wix/IIsExtension">
+  <Product Id="{8BEFF31F-7F57-4BDB-B88F-1A3B117C758D}" Language="1033"
+           Manufacturer="Pluralsight Samples" Name="Sign Up"
+           UpgradeCode="{7AC5232E-7CED-4D94-8470-622B5D4A549D}" Version="1.1.0.0">
+    <Package Compressed="yes" InstallerVersion="200" />
+
+    <Property Id="WIXUI_INSTALLDIR" Value="INSTALLLOCATION"/>
+    <Property Id="ALLUSERS" Value="1"/>
+
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ProgramFilesFolder">
+        <Directory Id="PluralsightSamplesFolder" Name="PluralsightSamples">
+          <Directory Id="INSTALLLOCATION" Name="SignUp">
+            <Directory Id="WebDir" Name="web">
+              <Component Id="Web.Dir" Guid="{28F12392-4791-4CD0-98A0-3A231CD8D66A}">
+                <File Id="fil664F8D5308D959FAAF6CAE9FA7EBE67F" Source="C:\websites\signup\About.aspx" />
+                <File Id="fil2697B40C88FD4F8EEF97738EAD32A3B9" Source="C:\websites\signup\Bundle.config" />
+                <File Id="fil02710F87B4F83EFF070138D76CCA2817" Source="C:\websites\signup\Contact.aspx" />
+                <File Id="filD6E17B44E8295FC5A180628A1ACEB2B7" Source="C:\websites\signup\Default.aspx" />
+                <File Id="fil67BB8518566DBDA164AB4CF269CAB4B0" Source="C:\websites\signup\favicon.ico" />
+                <File Id="fil774330152FF3B5644B1BC2352E7C7C03" Source="C:\websites\signup\Global.asax" />
+                <File Id="fil8BB5BFEDE80A9F25CA4255D1EC431E0E" Source="C:\websites\signup\packages.config" />
+                <File Id="fil17341A77024C1D5EE3F26E3BB2DB54F5" Source="C:\websites\signup\SignUp.aspx" />
+                <File Id="fil3DDC10465C4D728EDB484932A2488D66" Source="C:\websites\signup\Site.Master" />
+                <File Id="fil9C99A048DFB7DD17C81ECCCB5312C311" Source="C:\websites\signup\Site.Mobile.Master" />
+                <File Id="fil56DD8B215FF04B0FF2952945C48D84D3" Source="C:\websites\signup\ThankYou.aspx" />
+                <File Id="filA4D6DCE0A0293943C3F9BA9CAB2A0BA1" Source="C:\websites\signup\ViewSwitcher.ascx" />
+                <File Id="filD3AB306E9E5C9A84740151CDAB75311E" Source="C:\websites\signup\Web.config" />
+              </Component>
+              <Directory Id="WebAppDataDir" Name="App_Data">
+                <Component Id="Web.AppDataDir" Guid="{CDFAAF70-12D9-4E21-9063-A8BFDB5AA8EA}">
+                  <File Id="fil721FF53D4809C360868765959C47823E" Source="C:\websites\signup\App_Data\SignUp.log" />
+                </Component>
+              </Directory>
+              <Directory Id="WebBinDir" Name="bin">
+                <Component Id="Web.BinDir" Guid="{44609C21-3B32-48B4-B255-03AD77B19E1E}">
+                  <File Id="fil2A61A246A2A51895F84CC78C0A774FE5" Source="C:\websites\signup\bin\Antlr3.Runtime.dll" />
+                  <File Id="filB8AC444FA7CA8B882854D43AC7CA7947" Source="C:\websites\signup\bin\Antlr3.Runtime.pdb" />
+                  <File Id="fil3B5AFC187907910957A57D5410808B18" Source="C:\websites\signup\bin\AspNet.ScriptManager.bootstrap.dll" />
+                  <File Id="fil1BF5E653B86E6CEBB56B94D45F71CB8E" Source="C:\websites\signup\bin\AspNet.ScriptManager.jQuery.dll" />
+                  <File Id="fil09BEA138CDAE3FCD2DEAE1FEBF0C3673" Source="C:\websites\signup\bin\EntityFramework.dll" />
+                  <File Id="filDE807F36C8A59976BD9FE23A2BAED01B" Source="C:\websites\signup\bin\EntityFramework.SqlServer.dll" />
+                  <File Id="fil5D7A3B6E65C67681F9F6E7B28A9F9CAA" Source="C:\websites\signup\bin\log4net.dll" />
+                  <File Id="fil0A91D7091F0508FBE4271B59D3328B5D" Source="C:\websites\signup\bin\Microsoft.AspNet.FriendlyUrls.dll" />
+                  <File Id="fil79D0CFD028D80D714C464093DCB77FE3" Source="C:\websites\signup\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll" />
+                  <File Id="fil60046CB937A188B57C4CD9D28281D410" Source="C:\websites\signup\bin\Microsoft.ScriptManager.MSAjax.dll" />
+                  <File Id="fil44C7E7BB37A3356699EC71B72D1A698B" Source="C:\websites\signup\bin\Microsoft.ScriptManager.WebForms.dll" />
+                  <File Id="fil7C5A87B7883885A34F0E8FA12CA6E8A4" Source="C:\websites\signup\bin\Microsoft.Web.Infrastructure.dll" />
+                  <File Id="fil63AD5966D3AC6189DB219888C9F4C75B" Source="C:\websites\signup\bin\NATS.Client.DLL" />
+                  <File Id="fil93CD73A1BBF92F3748B41C342D5BCFCD" Source="C:\websites\signup\bin\Newtonsoft.Json.dll" />
+                  <File Id="fil65E8C4F4374D4778FDB106D745051319" Source="C:\websites\signup\bin\SignUp.Core.dll" />
+                  <File Id="fil301DD8077765218830D17803A315391C" Source="C:\websites\signup\bin\SignUp.Core.pdb" />
+                  <File Id="fil7A93454E2EEEEF4DED48EB7CC0B7EE01" Source="C:\websites\signup\bin\SignUp.Entities.dll" />
+                  <File Id="filD9ADB2654016D3BF858A46EED329B71D" Source="C:\websites\signup\bin\SignUp.Entities.pdb" />
+                  <File Id="filA4722AD5F0CF68708863833B064ADCB2" Source="C:\websites\signup\bin\SignUp.Messaging.dll" />
+                  <File Id="filF62A44EAEBD872788978A08A6C478DC0" Source="C:\websites\signup\bin\SignUp.Messaging.pdb" />
+                  <File Id="filB58FA23F7BF0A5ED0318E397A8EDAF52" Source="C:\websites\signup\bin\SignUp.Model.dll" />
+                  <File Id="filE9F2FCB6927A7D53F6EE027EE69B6402" Source="C:\websites\signup\bin\SignUp.Model.dll.config" />
+                  <File Id="filA6994D74CA0D11C541179458E67EB9F7" Source="C:\websites\signup\bin\SignUp.Model.pdb" />
+                  <File Id="fil90B4863DBB35C132E637F7915FCF6D37" Source="C:\websites\signup\bin\SignUp.Web.dll" />
+                  <File Id="fil3C4FA4C81A59721D22F5EFAEDEC11C26" Source="C:\websites\signup\bin\SignUp.Web.pdb" />
+                  <File Id="filC71FB169EAF2630AAE5308E00BC0F636" Source="C:\websites\signup\bin\System.Web.Optimization.dll" />
+                  <File Id="filB0B4EEFCB5B2E80739A0C967382BDEF3" Source="C:\websites\signup\bin\WebGrease.dll" />
+                </Component>
+              </Directory>
+              <Directory Id="WebContentDir" Name="Content">
+                <Component Id="Web.ContentDir" Guid="{93B1A32E-AF7A-4EE9-9A4B-002989CDE4F1}">
+                  <File Id="filA9F54D691BADB3D8851CAACEC6EA9272" Source="C:\websites\signup\Content\bootstrap.css" />
+                  <File Id="fil5F874446F3108D5210356838ED05E01B" Source="C:\websites\signup\Content\bootstrap.min.css" />
+                  <File Id="filAD181C557AD237F578D9021579BCF915" Source="C:\websites\signup\Content\Site.css" />
+                </Component>
+              </Directory>
+              <Directory Id="WebFontsDir" Name="fonts">
+                <Component Id="Web.FontsDir" Guid="{D6D6A9CB-CE5A-4FD2-9D24-08EA619AD8CD}">
+                  <File Id="filFC2949EEFEAE8F2D47B36D2C1754A192" Source="C:\websites\signup\fonts\glyphicons-halflings-regular.eot" />
+                  <File Id="fil009679DCC953804A19A0D7507A264305" Source="C:\websites\signup\fonts\glyphicons-halflings-regular.svg" />
+                  <File Id="fil046A3758E2653A0B021F2E03F44BCD11" Source="C:\websites\signup\fonts\glyphicons-halflings-regular.ttf" />
+                  <File Id="filBA76CA4D7E88F41F94B6094FBF9CA01F" Source="C:\websites\signup\fonts\glyphicons-halflings-regular.woff" />
+                </Component>
+                <Directory Id="WebFontsGeomanistDir" Name="geomanist">
+                  <Component Id="Web.FontsGeomanistDir" Guid="{FFAA77ED-9BC3-482E-A749-59864D27DD12}">
+                    <File Id="filFAF84164E616A599FEB39F66824EF470" Source="C:\websites\signup\fonts\geomanist\hinted-Geomanist-Book.woff2" />
+                  </Component>
+                </Directory>
+              </Directory>
+              <Directory Id="WebScriptsDir" Name="Scripts">
+                <Component Id="Web.ScriptsDir" Guid="{E2B88309-2004-4934-BDE1-A84A0233E3B2}">
+                  <File Id="fil30366FA509F61DE58ED1A45BEAAF026E" Source="C:\websites\signup\Scripts\bootstrap.js" />
+                  <File Id="fil66DF1F1F2EE17C1FC045E5967948F9CB" Source="C:\websites\signup\Scripts\bootstrap.min.js" />
+                  <File Id="fil01D194FFF5EC4CB484C994F8F8DBA2AF" Source="C:\websites\signup\Scripts\jquery-1.10.2.js" />
+                  <File Id="fil86D2D7F12C127545420BA8B2840C744A" Source="C:\websites\signup\Scripts\jquery-1.10.2.min.js" />
+                  <File Id="fil8AEF26700814870EA1A123800EF7F2F5" Source="C:\websites\signup\Scripts\jquery-1.10.2.min.map" />
+                  <File Id="filEAE4802DF3959607E1A0CF0B9A2BFC43" Source="C:\websites\signup\Scripts\modernizr-2.6.2.js" />
+                  <File Id="filFB8F31414CDF36A2589B9D7235D6392A" Source="C:\websites\signup\Scripts\respond.js" />
+                  <File Id="filC856CB2428D4B37933B863322B06BE42" Source="C:\websites\signup\Scripts\respond.min.js" />
+                  <File Id="fil6956498FE810C63090BF1C9A8A5A6A17" Source="C:\websites\signup\Scripts\_references.js" />
+                </Component>
+                <Directory Id="WebScriptsWebFormsDir" Name="WebForms">
+                  <Component Id="Web.ScriptsWebFormsDir" Guid="{0BF3800E-F1A1-42E2-A71E-16FEF2EC8EEA}">
+                    <File Id="fil7EE0A8484FB8C7509EB084D7373E1378" Source="C:\websites\signup\Scripts\WebForms\DetailsView.js" />
+                    <File Id="fil7E92EF5B1785DD03958A52123169288C" Source="C:\websites\signup\Scripts\WebForms\Focus.js" />
+                    <File Id="fil31B45CAE3EC703D74D7B699B9D4183D5" Source="C:\websites\signup\Scripts\WebForms\GridView.js" />
+                    <File Id="filE5A03AC6D5D5A6CCE8EC6785E29458EA" Source="C:\websites\signup\Scripts\WebForms\Menu.js" />
+                    <File Id="fil2C5C7405F1CCF89181125D4D9419EBBA" Source="C:\websites\signup\Scripts\WebForms\MenuStandards.js" />
+                    <File Id="fil7DE1354FEB0666B684382EB1277A46F2" Source="C:\websites\signup\Scripts\WebForms\SmartNav.js" />
+                    <File Id="filB25F4FAA99C0B3A6C2CEFF5A0AB8CE5D" Source="C:\websites\signup\Scripts\WebForms\TreeView.js" />
+                    <File Id="fil4F5EE1018377D652FA8E3F63DF8EA754" Source="C:\websites\signup\Scripts\WebForms\WebForms.js" />
+                    <File Id="fil841615C29D5C7841EE1FC3315D16FF96" Source="C:\websites\signup\Scripts\WebForms\WebParts.js" />
+                    <File Id="fil2B9214A0A5EF91EA2754E4060541FB7A" Source="C:\websites\signup\Scripts\WebForms\WebUIValidation.js" />
+                  </Component>
+                  <Directory Id="WebScriptsWebFormsMSAjaxDir" Name="MSAjax">
+                    <Component Id="Web.ScriptsWebFormsMSAjaxDir" Guid="{CAE3ADD9-CFDC-4101-BFFD-F2B91AD40B5B}">
+                      <File Id="fil5025847CFDAB8F67B98CF02007610BC4" Source="C:\websites\signup\Scripts\WebForms\MSAjax\MicrosoftAjax.js" />
+                      <File Id="fil152296E2269B29FA34CA4AC24981BA0E" Source="C:\websites\signup\Scripts\WebForms\MSAjax\MicrosoftAjaxApplicationServices.js" />
+                      <File Id="filF78472C1CFBCDB3599F4DF0F6EB436E0" Source="C:\websites\signup\Scripts\WebForms\MSAjax\MicrosoftAjaxComponentModel.js" />
+                      <File Id="fil5D12BB8833CECF2DC4A1E4808363B93E" Source="C:\websites\signup\Scripts\WebForms\MSAjax\MicrosoftAjaxCore.js" />
+                      <File Id="filBAEF3971C3DFAC0F31033A70E01BB365" Source="C:\websites\signup\Scripts\WebForms\MSAjax\MicrosoftAjaxGlobalization.js" />
+                      <File Id="fil0B90218E3047F5187D02B28D707C2DF8" Source="C:\websites\signup\Scripts\WebForms\MSAjax\MicrosoftAjaxHistory.js" />
+                      <File Id="fil1AD6B0C339E54793E51ED78D8EB80F47" Source="C:\websites\signup\Scripts\WebForms\MSAjax\MicrosoftAjaxNetwork.js" />
+                      <File Id="fil790E1F8F8F16963A37D5B0055323A687" Source="C:\websites\signup\Scripts\WebForms\MSAjax\MicrosoftAjaxSerialization.js" />
+                      <File Id="fil3CF20F342656AE4E9434E29015D867A6" Source="C:\websites\signup\Scripts\WebForms\MSAjax\MicrosoftAjaxTimer.js" />
+                      <File Id="fil3752859AE16069480481806D168ABF93" Source="C:\websites\signup\Scripts\WebForms\MSAjax\MicrosoftAjaxWebForms.js" />
+                      <File Id="fil627AF9197DB1F59C05A41B588943F9A1" Source="C:\websites\signup\Scripts\WebForms\MSAjax\MicrosoftAjaxWebServices.js" />
+                    </Component>
+                  </Directory>
+                </Directory>
+              </Directory>
+            </Directory>
+          </Directory>
+        </Directory>
+      </Directory>
+
+      <!-- Website -->
+      <Component Id="Web.Site" Guid="{B935A624-63E6-4554-A9E2-AB4893AFC117}">
+        <iis:WebVirtualDir Id="WebVirtualDir"
+                   Alias="SignUp"
+                   Directory="WebDir" WebSite="DefaultWebSite">
+          <iis:WebApplication Id="WebApplication" Name="SignUp" />
+        </iis:WebVirtualDir>
+      </Component>
+
+    </Directory>
+
+    <iis:WebSite Id="DefaultWebSite" Description="Default Web Site">
+      <iis:WebAddress Id="AllUnassigned" Port="80" />
+    </iis:WebSite>
+
+    <Feature Id="ProductFeature" Title="ProductLaunch" Level="1">
+      <ComponentRef Id="Web.Dir"/>
+      <ComponentRef Id="Web.AppDataDir"/>
+      <ComponentRef Id="Web.BinDir"/>
+      <ComponentRef Id="Web.ContentDir"/>
+      <ComponentRef Id="Web.FontsDir"/>
+      <ComponentRef Id="Web.FontsGeomanistDir" />
+      <ComponentRef Id="Web.ScriptsDir"/>
+      <ComponentRef Id="Web.ScriptsWebFormsDir"/>
+      <ComponentRef Id="Web.ScriptsWebFormsMSAjaxDir"/>
+      <ComponentRef Id="Web.Site"/>
+    </Feature>
+
+    <Media Id="1" Cabinet="product.cab" EmbedCab="yes" />
+
+    <UIRef Id="WixUI_ProductLaunch" />
+
+  </Product>
+
+  <Fragment>
+    <UI Id="WixUI_ProductLaunch">
+      <TextStyle Id="WixUI_Font_Normal" FaceName="Tahoma" Size="8" />
+      <TextStyle Id="WixUI_Font_Bigger" FaceName="Tahoma" Size="12" />
+      <TextStyle Id="WixUI_Font_Title" FaceName="Tahoma" Size="9" Bold="yes" />
+
+      <Property Id="DefaultUIFont" Value="WixUI_Font_Normal" />
+      <Property Id="WixUI_Mode" Value="Mondo" />
+
+      <DialogRef Id="ErrorDlg" />
+      <DialogRef Id="FatalError" />
+      <DialogRef Id="FilesInUse" />
+      <DialogRef Id="MsiRMFilesInUse" />
+      <DialogRef Id="PrepareDlg" />
+      <DialogRef Id="ProgressDlg" />
+      <DialogRef Id="ResumeDlg" />
+      <DialogRef Id="UserExit" />
+
+      <DialogRef Id="BrowseDlg" />
+
+      <Publish Dialog="BrowseDlg" Control="OK" Event="DoAction" Value="WixUIValidatePath" Order="3">1</Publish>
+      <Publish Dialog="BrowseDlg" Control="OK" Event="SpawnDialog" Value="InvalidDirDlg" Order="4"><![CDATA[WIXUI_INSTALLDIR_VALID<>"1"]]></Publish>
+
+
+      <Publish Dialog="ExitDialog" Control="Finish" Event="EndDialog" Value="Return" Order="999">1</Publish>
+
+      <Publish Dialog="WelcomeDlg" Control="Next" Event="NewDialog" Value="InstallDirDlg">1</Publish>
+
+      <Publish Dialog="InstallDirDlg" Control="Back" Event="NewDialog" Value="WelcomeDlg">1</Publish>
+      <Publish Dialog="InstallDirDlg" Control="Next" Event="SetTargetPath" Value="[WIXUI_INSTALLDIR]" Order="1">1</Publish>
+      <Publish Dialog="InstallDirDlg" Control="Next" Event="DoAction" Value="WixUIValidatePath" Order="2">NOT WIXUI_DONTVALIDATEPATH</Publish>
+      <Publish Dialog="InstallDirDlg" Control="Next" Event="SpawnDialog" Value="InvalidDirDlg" Order="3"><![CDATA[NOT WIXUI_DONTVALIDATEPATH AND WIXUI_INSTALLDIR_VALID<>"1"]]></Publish>
+      <Publish Dialog="InstallDirDlg" Control="Next" Event="NewDialog" Value="VerifyReadyDlg" Order="4">WIXUI_DONTVALIDATEPATH OR WIXUI_INSTALLDIR_VALID="1"</Publish>
+      <Publish Dialog="InstallDirDlg" Control="ChangeFolder" Property="_BrowseProperty" Value="[WIXUI_INSTALLDIR]" Order="1">1</Publish>
+      <Publish Dialog="InstallDirDlg" Control="ChangeFolder" Event="SpawnDialog" Value="BrowseDlg" Order="2">1</Publish>
+
+      <Publish Dialog="VerifyReadyDlg" Control="Back" Event="NewDialog" Value="InstallDirDlg">1</Publish>
+      <Publish Dialog="VerifyReadyDlg" Control="Back" Event="NewDialog" Value="MaintenanceTypeDlg" Order="2">WixUI_InstallMode = "Repair" OR WixUI_InstallMode = "Remove"</Publish>
+
+      <Publish Dialog="MaintenanceWelcomeDlg" Control="Next" Event="NewDialog" Value="MaintenanceTypeDlg">1</Publish>
+
+      <Publish Dialog="MaintenanceTypeDlg" Control="RepairButton" Event="NewDialog" Value="VerifyReadyDlg">1</Publish>
+      <Publish Dialog="MaintenanceTypeDlg" Control="RemoveButton" Event="NewDialog" Value="VerifyReadyDlg">1</Publish>
+      <Publish Dialog="MaintenanceTypeDlg" Control="Back" Event="NewDialog" Value="MaintenanceWelcomeDlg">1</Publish>
+    </UI>
+
+    <UIRef Id="WixUI_Common" />
+
+  </Fragment>
+
+</Wix>

@@ -1,0 +1,87 @@
+version: '3.3'
+
+services:
+  
+  webinar-db:
+    image: sixeyed/psod-mta-db:v2
+    networks:
+      - app-net
+
+  message-queue:
+    image: nats:nanoserver
+    networks:
+      - app-net
+
+  elasticsearch:
+    image: sixeyed/psod-mta-elasticsearch:nanoserver
+    environment:
+      - ES_JAVA_OPTS=-Xms512m -Xmx512m
+    networks:
+      - app-net
+
+  kibana:
+    image: sixeyed/psod-mta-kibana:windowsservercore
+    ports:
+      - "5601:5601"
+    depends_on:
+      - elasticsearch
+    networks:
+      - app-net
+
+  save-handler:
+    image: sixeyed/psod-mta-save-handler:v2
+    depends_on:
+      - webinar-db
+      - message-queue
+    networks:
+      - app-net
+
+  index-handler:
+    image: sixeyed/psod-mta-index-handler:v2
+    depends_on:
+      - elasticsearch
+      - message-queue
+    networks:
+      - app-net
+
+  web-app:
+    image: sixeyed/psod-mta-app:v5
+    depends_on:
+      - webinar-db
+      - message-queue
+    networks:
+      - app-net
+
+  homepage:
+    image: sixeyed/psod-mta-umbraco:v1
+    networks:
+      - app-net
+
+  nginx:
+    image: sixeyed/psod-mta-nginx:windowsservercore
+    ports:
+      - "80:80"
+    depends_on:
+      - web-app
+      - homepage
+    networks:
+      - app-net
+
+  prometheus:
+    image: sixeyed/psod-mta-prometheus:nanoserver
+    ports:
+      - "9090:9090"
+    networks:
+      - app-net
+
+  grafana:
+    image: sixeyed/psod-mta-grafana:v1
+    ports:
+      - "3000:3000"
+    networks:
+      - app-net
+
+networks:
+  app-net:
+    external:
+      name: nat

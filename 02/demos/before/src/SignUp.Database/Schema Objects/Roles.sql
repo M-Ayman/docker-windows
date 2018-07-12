@@ -1,0 +1,6 @@
+﻿CREATE TABLE [dbo].[Roles]
+(
+	[RoleId] INT NOT NULL PRIMARY KEY IDENTITY, 
+    [RoleCode] NVARCHAR(10) NOT NULL, 
+    [RoleName] NVARCHAR(100) NOT NULL
+)

@@ -1,0 +1,2 @@
+2017-09-04 12:01:09,281 [1 ] INFO  - - Setting DbConfiguration - maxRetryCount: 5, maxDelaySeconds: 30
+2017-09-04 12:14:17,479 [7 ] INFO  - - Setting DbConfiguration - maxRetryCount: 5, maxDelaySeconds: 30

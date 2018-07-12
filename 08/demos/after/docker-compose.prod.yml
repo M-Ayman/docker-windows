@@ -1,0 +1,96 @@
+version: '3.3'
+
+services:
+    
+  message-queue:
+    deploy:
+      endpoint_mode: dnsrr
+      placement:
+        constraints:
+          - node.platform.os == windows
+
+  elasticsearch:
+    environment:
+      - ES_JAVA_OPTS=-Xms700m -Xmx700m
+    deploy:
+      endpoint_mode: dnsrr
+      placement:
+        constraints:
+          - node.platform.os == windows
+
+  kibana:
+    ports:
+     - mode: host
+       published: 5601
+       target: 5601
+    deploy:
+      endpoint_mode: dnsrr
+      placement:
+        constraints:
+          - node.platform.os == windows
+
+  save-handler:
+    secrets:
+      - connection-strings
+    deploy:
+      endpoint_mode: dnsrr
+      placement:
+        constraints:
+          - node.platform.os == windows
+
+  index-handler:
+    deploy:
+      endpoint_mode: dnsrr
+      placement:
+        constraints:
+          - node.platform.os == windows
+
+  web-app:
+    secrets:
+      - connection-strings
+    deploy:
+      endpoint_mode: dnsrr
+      placement:
+        constraints:
+          - node.platform.os == windows
+
+  homepage:
+    deploy:
+      endpoint_mode: dnsrr
+      placement:
+        constraints:
+          - node.platform.os == windows
+
+  nginx:
+    ports:
+     - mode: host
+       published: 80
+       target: 80
+    deploy:
+      endpoint_mode: dnsrr
+      placement:
+        constraints:
+          - node.platform.os == windows
+
+  prometheus:
+    deploy:
+      endpoint_mode: dnsrr
+      placement:
+        constraints:
+          - node.platform.os == windows     
+
+  grafana:
+    ports:
+     - mode: host
+       published: 3000
+       target: 3000
+    deploy:
+      endpoint_mode: dnsrr
+      placement:
+        constraints:
+          - node.platform.os == windows
+
+secrets:
+  connection-strings:
+    external:
+      name: webinar-connection-strings
